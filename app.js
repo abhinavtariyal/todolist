@@ -11,7 +11,7 @@ app.get('/',function(req,res){
   let dayTime = date.getDay();
 res.render("lists",{kindOfDay:dayTime,listItem : items})     //render a file called lists, pass a single variable called kindOfDay
 });
- 
+
 app.get("/work",function(req,res){
   res.render("lists",{kindOfDay : "WorkList", listItem : workItems});
 })
@@ -35,6 +35,6 @@ app.get("/about",function(req,res){
     res.render("about");
 })
 
-app.listen('3000',function(){
+app.listen(process.env.PORT || 3000,function(){
   console.log("server started at port 3000");
 })
